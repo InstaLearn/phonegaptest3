@@ -1,0 +1,38 @@
+/*
+RESPONSIVE CSS by Inserver Elearning Factory
+http://www.inserver.es
+*/
+
+
+/*MOBILE LANDSCAPE*/
+@media (max-width: 500px) {
+#login {
+	left: 50%;
+	margin: -40% 0 0 -40%;
+	top: 50%;
+	width: 80%;
+	height: auto;
+}
+#footer {
+	text-align: center;
+	padding: 10px 0;
+}
+#credits {
+	right: 0;
+	width: 19%;
+}
+}
+
+/*MOBILE PORTRAIT*/
+@media (max-width: 350px) {
+#login {
+	margin: -32% 0 0 -40%;
+	top: 40%;
+	width: 80%;
+}
+#credits {
+	right:none;;
+	width: 100%;
+}
+
+}

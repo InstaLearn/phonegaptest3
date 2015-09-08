@@ -1,0 +1,8 @@
+[24-Feb-2015 14:07:08 UTC] PHP Warning:  Unterminated comment starting line 1944 in /home/charlesacc1/public_html/lib/navigationlib.php on line 1944
+[24-Feb-2015 14:07:08 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/charlesacc1/public_html/lib/navigationlib.php on line 1949
+[24-Feb-2015 14:09:09 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/charlesacc1/public_html/lib/navigationlib.php on line 2824
+[24-Feb-2015 14:10:39 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/charlesacc1/public_html/lib/navigationlib.php on line 669
+[24-Feb-2015 14:11:02 UTC] PHP Warning:  Unterminated comment starting line 1944 in /home/charlesacc1/public_html/lib/navigationlib.php on line 1944
+[24-Feb-2015 14:11:02 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/charlesacc1/public_html/lib/navigationlib.php on line 1949
+[24-Feb-2015 14:16:53 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/charlesacc1/public_html/lib/navigationlib.php on line 3129
+[28-Feb-2015 18:14:12 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/charlesacc1/public_html/lib/navigationlib.php on line 3002
