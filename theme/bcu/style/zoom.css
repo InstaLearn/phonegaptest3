@@ -1,0 +1,37 @@
+/*set fullscreen */
+.fullin .container {
+	width: 95%;
+}
+
+.sbll {
+	display: none;
+}
+
+.fullin .sbll {
+	display: inherit;
+}
+
+.fullin .hbll {
+	display: none;
+}
+
+.zoomin #block-region-side-post {
+    display: none;
+}
+.zoomin #region-main,
+.zoomin #region-bs-main-and-pre {
+    width: 100% !important;
+    left: 0 !important;
+}
+
+.sbl {
+	display: none;
+}
+
+.zoomin .sbl {
+	display: inherit;
+}
+
+.zoomin .hbl {
+	display: none;
+}

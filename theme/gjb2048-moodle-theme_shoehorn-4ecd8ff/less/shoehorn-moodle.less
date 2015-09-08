@@ -1,0 +1,976 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+// Shoehorn theme with the underlying Bootstrap theme.
+// @package    theme
+// @subpackage shoehorn
+// @copyright  &copy; 2014-onwards G J Barnard in respect to modifications of the Bootstrap theme.
+// @author     G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
+// @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+
+/* shoehorn-moodle.less */
+// Moodle overrides.
+// backup-restore.less.
+.path-backup .mform .grouped_settings {
+    &.section_level {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+// calendar.less.
+.block .minicalendar td.weekend {
+    color: lighten(@text-color, 10%);
+}
+
+// core.less.
+// Bas 'fixed moving blocks to empty region' 17/01/2014 - SHA-1: 7c2d6dd6b36097290d63865acd07137b0b0497d6.
+// Look at mixins.less for left and right on push and pull respectively.
+.editing.used-region-side-post.used-region-side-pre {
+    #region-main {
+        .make-sm-column(4);
+        .make-md-column(6);
+        .make-lg-column(8);
+        //.make-sm-column-push(4);
+        //.make-md-column-push(3);
+        //.make-lg-column-push(2);
+        left: inherit;
+    }
+    #block-region-side-post {
+        .make-sm-column(4);
+        .make-md-column(3);
+        .make-lg-column(2);
+        min-height: 100px;
+    }
+    #block-region-side-pre {
+        .make-sm-column(4);
+        .make-md-column(3);
+        .make-lg-column(2);
+        //.make-sm-column-pull(4);
+        //.make-md-column-pull(6);
+        //.make-lg-column-pull(8);
+        right: inherit;
+        min-height: 100px;
+    }
+}
+
+.has_dock {
+    &.empty-region-side-pre #region-main, &.empty-region-side-post #region-main {
+        .make-sm-column(12);
+        .make-md-column(12);
+        .make-lg-column(12);
+        .make-sm-column-push(0);
+        .make-md-column-push(0);
+        .make-lg-column-push(0);
+    }
+
+    &.empty-region-side-pre.used-region-side-post #region-main,
+    &.empty-region-side-post.used-region-side-pre #region-main {
+        .make-sm-column(8);
+        .make-md-column(9);
+        .make-lg-column(10);
+    }
+
+    &.empty-region-side-pre #block-region-side-pre {
+        display: none;
+    }
+
+    &.empty-region-side-post #block-region-side-post {
+        display: none;
+    }
+}
+
+.has_dock.dir-rtl {
+    &.empty-region-side-pre.used-region-side-post #region-main,
+    &.empty-region-side-post.used-region-side-pre #region-main {
+        .make-sm-column-push(4);
+        .make-md-column-push(3);
+        .make-lg-column-push(2);
+    }
+
+    &.empty-region-side-post.used-region-side-pre #block-region-side-pre,
+    &.empty-region-side-pre.used-region-side-post #block-region-side-post {
+        .make-sm-column-pull(8);
+        .make-md-column-pull(9);
+        .make-lg-column-pull(10);
+    }
+}
+
+/* Icon styles */
+img.icon {
+    margin-right: 0px;
+}
+
+img.iconsmall {
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+img.iconhelp,
+.helplink img {
+    margin-left: 0px;
+}
+
+/* core.less */
+.moodle-dialogue-base .moodle-dialogue-wrap {
+    border: 1px solid @page-bottom-bg-dark-spin;
+    //border: 1px solid @page-bottom-bg-light;
+    box-shadow: 5px 5px 20px 0 @text-color;
+    background-color: @page-bottom-bg;
+}
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd {
+    color: @text-color;
+    border-bottom: 1px solid @navbar-default-border;
+    //background: @page-bottom-bg-light;
+    #gradient > .vertical(#fff, @navbar-default-bg);
+    padding: 2px 5px; // Until https://github.com/bmbrands/theme_bootstrap/pull/350 accepted.
+}
+
+.moodle-dialogue-base .moodle-dialogue .moodle-dialogue-bd {
+    color: @text-color;
+    input {
+        border-radius: @border-radius-base;
+        border-color: @page-bottom-bg-light;
+    }
+}
+
+.moodle-actionmenu[data-enhanced].show {
+    display: inline !important; // TODO: Undo change in upstream bootstrap theme.
+    .menu {
+        > li > a {
+            &:hover, &:focus {
+                color: @page-top-bg;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.block .moodle-actionmenu[data-enhanced].show {
+    display: block !important; // TODO: Undo change in upstream bootstrap theme.
+}
+
+// course.less.
+.course-content {
+    .section-summary {
+        border: 1px solid @text-color;
+    }
+    ul {
+        li.section.main {
+            border: none;
+            border-bottom: 2px solid @page-bottom-bg-light;
+        }
+    }
+}
+
+ul {
+    &.topics, &.weeks {
+        padding-left: 0px;
+    }
+}
+
+.editing .section {
+    .activity {
+        &:hover, &.action-menu-shown {
+            background-color: transparent;
+        }
+    }
+    .editing_title .iconsmall {
+        width: 13px;
+        height: 13px;
+        margin: 0.3em;
+        padding: 0;
+    }
+}
+
+.section .moodle-actionmenu .iconsmall {
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+    margin-bottom: 7px;
+}
+
+#page-course-index-category {
+    .generalbox.info {
+        border: 1px dotted @text-color;
+    }
+}
+
+.coursebox {
+    .content {
+        .summary, .coursecat {
+            float: right;
+            width: 55%;
+        }
+        .teachers, .courseimage, .coursefile {
+            clear: left;
+            float: left;
+            width: 40%;
+        }
+        .summary.noteachers { // Class 'noteachers' is an Shoehorn special in the overridded course_renderer.php.
+            width: 100%;
+            float: none;
+        }
+        .teachers, .summary.noteachers {
+            margin-left: 0px;
+        }
+    }
+}
+
+// dock.less.
+
+/* Experimental CSS for big font capability.
+@dock-height: (@dock-width * 5.5);
+#dock .dockedtitle h2 {
+    font-size: @dock-title-font-size !important;
+    top: ((@dock-height / 2) + (@dock-width / 2)) !important;
+}
+#dock .dockedtitle, #dock .dockedtitle div {
+    height: @dock-height !important;
+}
+*/
+
+#dock .dockedtitle h2 {
+    font-size: @dock-title-font-size !important;
+    margin-top: 4px;
+    line-height: 24px;
+}
+
+#dockeditempanel {
+    .dockeditempanel_content {
+        background-color: rgba(red(@page-bottom-bg), green(@page-bottom-bg), blue(@page-bottom-bg), 0.95);
+        border-color: rgba(red(@page-top-bg), green(@page-top-bg), blue(@page-top-bg), 0.9);
+    }
+}
+
+// enrolement.less.
+#page-enrol-users .enrol_user_buttons, .enrol_user_buttons {
+    float: inherit;
+    text-align: right;
+}
+
+// filemanager.less.
+.filemanager a,
+.file-picker a,
+.filemanager a:hover,
+.file-picker a:hover {
+    color: @text-color;
+}
+
+.filemanager .fp-navbar {
+    background: @page-bottom-bg-light;
+    border: 1px solid @page-bottom-bg;
+}
+
+.file-picker .fp-navbar {
+    background: @page-bottom-bg-light;
+    border-bottom: 1px solid @page-bottom-bg;
+    min-height: 36px; // Until https://github.com/bmbrands/theme_bootstrap/pull/350 accepted.
+}
+
+.file-picker .fp-navbar .fp-viewbar {
+    margin: 2px 4px; // Until https://github.com/bmbrands/theme_bootstrap/pull/350 accepted.
+}
+
+.file-picker .fp-repo-area {
+    border-right: 1px solid @page-bottom-bg-light;
+    height: 490px; // Until https://github.com/bmbrands/theme_bootstrap/pull/350 accepted.
+}
+
+.file-picker .fp-content {
+    padding-top: 0px; // Until https://github.com/bmbrands/theme_bootstrap/pull/350 accepted.
+}
+
+.file-picker .fp-toolbar {
+    padding: 2px 4px; // Until https://github.com/bmbrands/theme_bootstrap/pull/350 accepted.
+}
+
+.fp-pathbar {
+    border-top: 1px solid @page-bottom-bg;
+}
+
+.fp-iconview .fp-filename-field .fp-filename {
+    background: @page-bottom-bg-light;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    min-height: 44px;
+}
+
+.fp-iconview .fp-thumbnail {
+    border: 1px solid @page-bottom-bg-light;
+    border-radius: @border-radius-base;
+}
+
+.fp-iconview .fp-thumbnail img {
+    border: 1px solid @page-bottom-bg;
+    box-shadow: 1px 1px 2px 0 @page-bottom-bg-light;
+}
+.fp-iconview .fp-thumbnail:hover {
+    border: 1px solid @page-bottom-bg;
+    box-shadow: inset 0 0 10px 0px @page-bottom-bg-light;
+}
+.fp-iconview .fp-filename-field {
+    height: 44px;
+    word-wrap: break-word;
+    //overflow: visible;
+}
+.fp-iconview .fp-filename-field:hover {
+    //overflow: visible;
+    z-index: 1000;
+}
+
+.fp-toolbar .fp-btn-add,
+.fp-toolbar .fp-btn-download,
+.fp-toolbar .fp-btn-mkdir,
+.fp-toolbar .fp-tb-help,
+.fp-toolbar .fp-tb-manage,
+.fp-toolbar .fp-tb-logout,
+.fp-toolbar .fp-tb-refresh
+ {
+    border: 1px solid @page-bottom-bg;
+    border-bottom: 1px solid @page-bottom-bg-light;
+}
+
+.fp-toolbar a:hover {
+    background-image: radial-gradient(ellipse at center, #fff 60%, @page-bottom-bg-light 100%);
+    background-color: darken(@body-bg, 8%);
+}
+
+.fp-toolbar a:active {
+    background-image: radial-gradient(ellipse at center, #fff 40%, @page-bottom-bg-light 100%);
+    background-color: darken(@body-bg, 12%);
+}
+
+.file-picker .fp-list .fp-repo.active {
+    background: @page-bottom-bg-light;
+}
+
+.filepicker-filelist,
+.filemanager-container {
+    background: @body-bg;
+    border: 1px solid @page-bottom-bg;
+    min-height: 170px;
+}
+
+.file-picker .ygtvfocus,
+.filemanager .ygtvfocus {
+    background-color: @page-bottom-bg-light;
+}
+
+.filemanager .fp-content{
+    overflow: auto;
+    max-height: 472px;
+    min-height: 177px;
+}
+
+.fp-select .fp-hr {
+    border-bottom: 1px solid @page-bottom-bg-light;
+}
+
+.fp-select .fp-thumbnail {
+    border: 1px solid @page-bottom-bg-dark;
+    box-shadow: inset 0 0 10px 0 @page-bottom-bg;
+}
+.fp-select .fp-thumbnail img {
+    border: 1px solid @page-bottom-bg-dark;
+}
+
+.fp-toolbar .fp-btn-add,
+.fp-toolbar .fp-btn-download,
+.fp-toolbar .fp-btn-mkdir,
+.fp-toolbar .fp-tb-help,
+.fp-toolbar .fp-tb-manage,
+.fp-toolbar .fp-tb-logout,
+.fp-toolbar .fp-tb-refresh
+{
+    border: 1px solid @page-bottom-bg;
+    border-bottom: 1px solid @page-bottom-bg-light;
+    background: lighten(@page-bottom-bg-light, 2%);
+}
+
+.fp-viewbar {
+    border: 1px solid @page-bottom-bg;
+    border-bottom: 1px solid @page-bottom-bg-light;
+    background: lighten(@page-bottom-bg-light, 2%);
+}
+
+.fp-viewbar a {
+    border-right: 1px solid @page-bottom-bg;
+}
+
+.fp-viewbar a.checked:hover,
+.fp-viewbar a:hover {
+    background-image: radial-gradient(ellipse at center, #fff 60%, @page-bottom-bg 100%);
+    background-color: @page-bottom-bg;
+}
+
+.fp-viewbar a.checked,
+.fp-viewbar a:active {
+    background-image: radial-gradient(ellipse at center, #fff 40%, @page-bottom-bg 100%);
+    background-color: @page-bottom-bg;
+}
+
+// Drag and drop support (filemanager and filepicker form elements)
+.filepicker-filelist .filepicker-container,
+.filemanager.fm-noitems .fm-empty-container {
+    padding-top: 75px;  // Allows for two lines in the file picker (for different languages) without hitting the border on certain screen sizes.
+    border: 2px dotted @page-bottom-bg;
+}
+
+
+// forms.less.
+// Basic mforms layout, used in resources, user profile etc.
+.mform {
+    fieldset {
+        .fitem {
+            .fitemtitle {
+                .fgrouplabel {
+                    label {
+                        padding-top: 0px;
+                    }
+                }
+            }
+        }
+    }
+    fieldset.hidden {
+        .fitem {
+            .fitemtitle {
+                .make-sm-column(3);
+                .make-md-column(2);
+                .make-lg-column(1);
+            }
+            .felement {
+                .make-sm-column(9);
+                .make-md-column(10);
+                .make-lg-column(11);
+            }
+        }
+        > div {
+            .make-sm-column(12);
+            .make-sm-column-offset(0);
+            .make-md-column(12);
+            .make-md-column-offset(0);
+            .make-lg-column(12);
+            .make-lg-column-offset(0);
+        }
+    }
+    // submit buttons
+    fieldset.hidden .fitem_actionbuttons {
+            .form-group;
+            .form-horizontal .form-group;
+            > div.felement {
+                .make-sm-column(9);
+                .make-sm-column-offset(3);
+                .make-md-column(10);
+                .make-md-column-offset(2);
+                .make-lg-column(11);
+                .make-lg-column-offset(1);
+            }
+    }
+    .fcontainer,
+    fieldset {
+        .fitem {
+            margin-left: 0px;
+            margin-right: 0px;
+            .fitemtitle {
+                padding-left: 0px;
+            }
+            .felement {
+                padding-right: 0px;
+            }
+        }
+    }
+}
+
+.breadcrumb-button .forumsearch {
+    .panel;
+    .panel-default;
+    padding: 4px;
+}
+
+.mform .iconhelp {
+    margin-right: -4px;
+}
+
+.mform fieldset.collapsible legend a.fheader {
+    margin-left: 0px;
+}
+
+.path-admin .buttons,
+.form-buttons {
+// Counteract 'float' caused by .make-md-column(8);.
+    float: none;
+}
+
+// At this width and above the form label stacks beside the control
+@media (min-width: @screen-md-min) {
+    .form-item .form-setting input[type="text"],
+    .form-item .form-setting input[type="password"],
+    .form-item .form-setting select,
+    .mform .fcontainer .fitem .felement input[type="text"],
+    .mform .fcontainer .fitem .felement input[type="password"],
+    .mform .fcontainer .fitem .felement select {
+        min-width: 445px;
+    }
+    .form-item .form-setting td input[type="text"] {
+        min-width: 220px; // Device detection regular expressions boxes on 'Theme settings' page.
+    }
+}
+
+// Effectively grade\report\grader\styles.css.
+.path-grade-report-grader {
+    th.user img.userpicture {
+        margin-right: 0px; // Effectively move the margin to parent element for hover purposes.
+    }
+    table#fixed_column {
+        border-top-color: @page-bottom-bg;
+        th {
+            border-color: @page-bottom-bg;
+            &.user {
+                border-right-color: @page-bottom-bg;
+            }
+        }
+    }
+    table {
+        border-color: @page-bottom-bg;
+        tr.heading th.header {
+            border-top-color: @page-bottom-bg;
+        }
+        td, th {
+            border-left-color: @page-bottom-bg;
+            border-right-color: @page-bottom-bg;
+            border-bottom-color: @page-bottom-bg;
+        }
+    }
+}
+.path-grade-report-grader .gradeparent .user.cell .userpicture {
+    th.item, th.categoryitem, th.courseitem, td.cell {
+        border-color: @page-bottom-bg;
+    }
+    tr.heading th.courseitem {
+        border-width: 1px;
+    }
+}
+
+.path-grade-report-grader .gradeparent tr:nth-of-type(even) .cell {
+    background-color: @page-bottom-bg-light;
+}
+
+.path-grade-report-grader .gradeparent .floater {
+    .cell:nth-of-type(odd), &.lastrow .cell.header {
+        background-color: #fff;
+    }
+    .cell:nth-of-type(even), .cell.header {
+        background-color: @page-bottom-bg-light;
+    }
+}
+
+// input-groups.less.
+#region-main {
+    .input-group #coursesearchbox {
+        margin-left: 0;
+        border-top-left-radius: @border-radius-base; 
+        border-bottom-left-radius: @border-radius-base; 
+    }
+    #coursesearch {
+        margin-bottom: 15px;
+    }
+}
+
+// login.less
+.loginbox {
+    &.onecolumn  {
+        .make-sm-column(8);
+        .make-sm-column-push(2);
+        .make-md-column(6);
+        .make-md-column-push(3);
+        .make-lg-column(4);
+        .make-lg-column-push(4);
+    }
+
+    &.twocolumns {
+        .make-sm-column(10);
+        .make-sm-column-push(1);
+        .make-md-column(8);
+        .make-md-column-push(2);
+        .make-lg-column(6);
+        .make-lg-column-push(3);
+    }
+
+    &.twocolumns .loginpanel {
+        .make-sm-column(6);
+        .make-md-column(5);
+        .make-lg-column(4);
+        border: none;
+        background-color: transparent;
+    }
+
+    &.twocolumns .signuppanel {
+        .make-sm-column(6);
+        .make-md-column(7);
+        .make-lg-column(8);
+        left: 0;
+        padding: 19px;
+    }
+}
+
+.loginbox {
+    &.onecolumn, &.twocolumns {
+        // Separate to override above.
+        float: none;
+        background-color: rgba(red(@page-bottom-bg), green(@page-bottom-bg), blue(@page-bottom-bg), 0.5);
+        border: 1px solid rgba(red(@page-bottom-bg), green(@page-bottom-bg), blue(@page-bottom-bg), 0.7);
+        margin-top: 60px;
+    }
+}
+
+.loginbox .loginform .form-input input[type="text"], .loginbox .loginform .form-input input[type="password"] {
+    max-width: 100%;
+}
+
+.loginbox {
+    .loginsub, .guestsub {
+        text-align: center;
+    }
+}
+
+// message.less.
+#newmessageoverlay {
+    border: 1px solid @page-bottom-bg-dark;
+}
+
+#newmessageoverlay #newmessagetext {
+    background-color: @page-bottom-bg;
+    border-bottom: 1px solid @page-bottom-bg-dark;
+}
+
+#newmessageoverlay {
+    background-color: @page-bottom-bg-light;
+}
+
+.box.message .messagearea .messagehistory .messagehistorytype {
+    border-bottom: none;
+}
+
+// modules.less.
+#page-footer {
+    margin-top: 0;
+    border-top: none;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+}
+
+.container-fluid {
+    max-width: none;
+}
+
+@media(max-width: @screen-xs-max) {
+    .block {
+        margin-bottom: 10px;
+    }
+}
+
+// new.less.
+ul, ol {
+    padding-left: 24px;
+}
+
+.dropdown-menu {
+    li a {
+        &:hover, &:focus, &:active {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            .userpicture {
+                background-color: #fff;
+                border: solid 2px rgba(red(#fff), green(#fff), blue(#fff), 0.5);
+                border-radius: @border-radius-base;
+                height: 31px;
+                width: 31px;
+            }
+        }
+    }
+
+    li {
+        &:hover .msg-title, &:focus .msg-title, &:active .msg-title,
+        &:hover .msg-body, &:focus .msg-body, &:active .msg-body,
+        &:hover .msg-sender, &:focus .msg-sender, &:active .msg-sender {
+            background: none;
+            color: #fff;
+        }
+        &:hover .msg-time, &:focus .msg-time, &:active .msg-time {
+            background: none;
+            color: #fff;
+            span, i {
+                background: none;
+            }
+        }
+    }
+    .msg-sender {
+        color: @text-color;
+    }
+    .msg-time {
+        color: @text-color;
+    }
+}
+
+// modules.less.
+.forumsearch input[type=text] {
+    vertical-align: middle;
+}
+
+// question.less.
+.que .info,
+.path-mod-quiz .qnbutton { // mod_quiz style sheet.
+    background-color: @page-bottom-bg;
+    border: 1px solid @page-top-bg;
+    border-radius: @border-radius-base;
+    &.thispage {
+        border-color: @page-top-bg;
+        .thispageholder {
+            border-color: @page-top-bg;
+        }
+    }
+    &:hover {
+        border-radius: (@border-radius-base / 2);
+        color: lighten(@text-color, 10%);
+    }
+    &.free:hover {
+        text-decoration: none;
+    }
+}
+
+#page-mod-quiz-edit div.quizpage {
+  .pagecontent {
+    border: 1px solid @page-bottom-bg;
+    border-radius: @border-radius-base;
+  }
+  span.pagetitle {
+    min-width: 4em;
+  }
+}
+
+#page-mod-quiz-edit div.question div.content {
+  div.points {
+    padding-bottom: 0;
+    margin-top: 0;
+    top: 0;
+    display: inline-table;
+  }
+  div.questioncontrols {
+    background-color: transparent;
+    width: 70px;
+    padding: 0;
+  }
+  div.qorder {
+    right: 74px;
+    background-color: transparent;
+    input[type="text"] {
+      height: 20px;
+      font-size: 12px;
+    }
+  }
+  .questionpreview a {
+    background-color: transparent;
+  }
+}
+
+
+#page-mod-quiz-edit div.question div.content .questiontext,
+#categoryquestions .questiontext {
+    padding-left: 0.3em;
+    max-width: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+#page-mod-quiz-edit div.question div.content .questionname,
+#categoryquestions .questionname {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 24%;
+    display: inline;
+    vertical-align: bottom;
+    text-overflow: ellipsis;
+    label {
+        overflow: inherit;
+        text-overflow: inherit;
+    }
+}
+
+#page-mod-quiz-edit div.reorder div.question {
+  div.content {
+    width: 90%;
+  }
+  div.qnum {
+    width: 4em;
+  }
+}
+
+#page-mod-quiz-edit .reorder .questioncontentcontainer label {
+  display: inline;
+}
+
+// tags.less.
+.carousel-caption, .carousel-indicators {
+    bottom: 0px;
+}
+
+// userprofile.less.
+.userprofile {
+    .userprofilebox {
+        .profilepicture {
+            .make-sm-column(6);
+            .make-md-column(3);
+            .make-lg-column(2);
+        }
+        .descriptionbox {
+            .make-sm-column(6);
+            .make-md-column(9);
+            .make-lg-column(10);
+        }
+    }
+}
+
+// YUI.
+.yui-skin-sam .yui-panel {
+    color: @text-color;
+    background-color: @page-bottom-bg;
+    border: 1px solid @page-bottom-bg-dark-spin;
+    border-radius: @border-radius-base;
+    border-color: @page-top-bg;
+}
+
+.yui-skin-sam .yui-panel .hd,
+.yui-skin-sam .yui-panel .bd,
+.yui-skin-sam .yui-panel .ft {
+    color: @text-color;
+    background-color: @page-bottom-bg;
+}
+
+.yui-skin-sam .yui-panel .ft {
+    border-radius: 0px 0px @border-radius-base @border-radius-base;
+}
+
+.yui-skin-sam .yui-panel .hd {
+    #gradient > .vertical(#fff, @navbar-default-bg);
+    //background: @navbar-default-bg;
+    border-color: @navbar-default-border;
+    border-radius: @border-radius-base;
+    border-bottom: solid 1px @page-top-bg;
+    margin-top: -1px;
+    padding-top: 1px;
+    margin-bottom: -2px;
+    padding-bottom: 2px;
+}
+
+// Core plugins.
+// Atto editor - lib\editor\atto\styles.css.
+.editor_atto_content_wrap {
+    background-color: white !important;
+    color: @text-color !important;
+}
+
+.editor_atto_content_wrap,
+.editor_atto + textarea {
+    border: 1px solid @page-bottom-bg !important;
+    border-bottom-left-radius: @border-radius-base;
+    border-bottom-right-radius: @border-radius-base;
+}
+
+div.editor_atto_toolbar {
+    background: @page-bottom-bg-light !important; // I hate using important but see no other way.
+    border: 1px solid @page-bottom-bg !important;
+    border-top-left-radius: @border-radius-base;
+    border-top-right-radius: @border-radius-base;
+
+    button {
+        background: transparent !important;
+        &:hover {
+            background-image: radial-gradient(ellipse at center, #fff 60%, @page-bottom-bg-light 100%) !important;
+            background-color: darken(@body-bg, 8%) !important;
+        }
+        &:active, &.highlight {
+            background-image: radial-gradient(ellipse at center, #fff 40%, @page-bottom-bg-light 100%) !important;
+            background-color: darken(@body-bg, 12%) !important;
+        }
+    }
+
+    button + button {
+        border-left: 1px solid @page-bottom-bg !important;
+    }
+
+    div.atto_group {
+        border: 1px solid @page-bottom-bg !important;
+        border-bottom: 1px solid @page-bottom-bg-light !important;
+        background: lighten(@page-bottom-bg-light, 2%) !important;
+    }
+}
+
+// Quiz.
+body#page-question-type-multichoice div[id^=fitem_id_][id*=answer_], body#page-question-type-multichoice div[id^=fitem_id_][id*=fraction_], body#page-question-type-multichoice div[id^=fitem_id_][id*=feedback_] {
+    background: lighten(@page-bottom-bg-light, 3%);
+}
+
+body#page-question-type-multichoice div[id^=fitem_id_][id*=answer_] {
+    border-top-left-radius: @border-radius-base;
+    border-top-right-radius: @border-radius-base;
+    border-top: 2px solid @page-bottom-bg;
+    border-left: 2px solid @page-bottom-bg;
+    border-right: 2px solid @page-bottom-bg;
+}
+
+body#page-question-type-multichoice div[id^=fitem_id_][id*=fraction_] {
+    border-left: 2px solid @page-bottom-bg;
+    border-right: 2px solid @page-bottom-bg;
+}
+
+body#page-question-type-multichoice div[id^=fitem_id_][id*=feedback_] {
+    border-bottom-left-radius: @border-radius-base;
+    border-bottom-right-radius: @border-radius-base;
+    border-left: 2px solid @page-bottom-bg;
+    border-right: 2px solid @page-bottom-bg;
+    border-bottom: 2px solid @page-bottom-bg;
+}
+
+#page-mod-quiz-edit div.quizpage .pagecontent {
+    background: @page-bottom-bg-light;
+}
+
+/* mod_resource css */
+.path-mod-resource .resourcecontent {
+    overflow: auto;
+}
+
+/* Grader report */
+.path-grade-report-grader #region-main {
+    width: auto;
+    float: left;
+}
+
+/* Topics format */
+.course-content ul.topics li.section .right img.icon {
+    padding: 0 0 0 0;
+}
+
+/* RTL Rules */
+body.dir-rtl div.editor_atto_toolbar button + button {
+    border-right: 1px solid @page-bottom-bg;
+}
+
+/* Misc. */
+.atto_control img {
+    background-color: white;
+}

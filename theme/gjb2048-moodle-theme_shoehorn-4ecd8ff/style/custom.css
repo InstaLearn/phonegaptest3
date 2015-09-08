@@ -1,0 +1,83 @@
+/* Shoehorn Custom CSS
+-------------------------*/
+a.logo {
+    background: url('[[setting:logo]]') no-repeat 0 0;
+    display: block;
+    float: left;
+    height: 75px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.dir-rtl a.logo {
+    background: url('[[setting:logo]]') no-repeat 100% 0;
+    display: block;
+    float: right;
+}
+
+#region-main-shoehorn-shadow {
+    background: url([[pix:theme|shadow]]) no-repeat scroll 50% 100% / 96% 12px transparent;
+    padding-bottom: 12px;
+    margin: 0 auto;
+    display: block;
+    clear: both; /* Clear floats that are sometimes used to make the #region-main-shoehorn fit the content, i.e Editing Quiz. */
+}
+
+#footer-shadow {
+    background: url([[pix:theme|shadow_footer]]) no-repeat scroll 50% 0% / 100% 12px transparent;
+    padding-top: 12px;
+    margin-top: 1em;
+    /* http://css-tricks.com/css-transparency-settings-for-all-broswers/ */
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+body.pagelayout-login #region-main.loggedout {
+    background: none;
+}
+
+.loginbox .loginpanel .loginsub:before {
+    [[setting:theloginmessge]]
+}
+
+/* Styles that should not be flipped for RTL. */
+/* Footer. */
+body.has_dock_left_vertical.has_dock #page-footer {
+    margin-left: 0px;
+}
+
+body.has_dock_right_vertical.has_dock #page-footer {
+    margin-right: 0px;
+}
+
+/* Look and feel settings
+-------------------------*/
+body.allpagesbackgroundimage #page-area {
+    [[setting:landfallpagesbackgroundimage]]
+}
+
+body #region-main-shoehorn {
+    [[setting:landfallpagescontenttransparency]]
+}
+
+body #region-main-shoehorn-shadow {
+    [[setting:landfallpagescontenttransparencymain]]
+}
+
+body.frontpagebackgroundimage #page-area {
+    [[setting:landffrontpagebackgroundimage]]
+}
+
+body.pagelayout-frontpage #region-main-shoehorn {
+    [[setting:landffrontpagecontenttransparency]]
+}
+
+body.pagelayout-frontpage #region-main-shoehorn-shadow {
+    [[setting:landffrontpagecontenttransparencymain]]
+}
+
+/* Custom CSS Settings
+-------------------------*/
+[[setting:customcss]]

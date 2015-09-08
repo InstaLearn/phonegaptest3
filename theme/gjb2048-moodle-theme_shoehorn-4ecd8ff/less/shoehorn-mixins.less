@@ -1,0 +1,44 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+// Shoehorn theme with the underlying Bootstrap theme.
+// @package    theme
+// @subpackage shoehorn
+// @copyright  &copy; 2014-onwards G J Barnard in respect to modifications of the Bootstrap theme.
+// @author     G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
+// @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+
+/* shoehorn-mixins.less */
+// Shoehorn custom mixins.
+
+#gradient {
+  .vertical(@start-color: #555; @end-color: #333; @opacity: 1; @start-percent: 0%; @end-percent: 100%) {
+    background-image: -webkit-linear-gradient(top, rgba(red(@start-color), green(@start-color), blue(@start-color), @opacity) @start-percent, rgba(red(@end-color), green(@end-color), blue(@end-color), @opacity) @end-percent);  // Safari 5.1-6, Chrome 10+
+    background-image: linear-gradient(to bottom, rgba(red(@start-color), green(@start-color), blue(@start-color), @opacity) @start-percent, rgba(red(@end-color), green(@end-color), blue(@end-color), @opacity) @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
+  }
+}
+
+#shoehorn {
+  .background-opacity(@colour; @opacity) {
+    background-color: @colour;
+    background-color: rgba(red(@colour), green(@colour), blue(@colour), @opacity);
+  }
+  .border-opacity(@colour; @opacity) {
+    border-color: @colour;
+    border-color: rgba(red(@colour), green(@colour), blue(@colour), @opacity);
+  }
+}
