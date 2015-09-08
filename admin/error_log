@@ -1,0 +1,58 @@
+[26-Dec-2014 13:40:18 UTC] Default exception handler: Plugin "format_masonry" is installed in incorrect location "$CFG-&gt;dirroot/local/masonry", expected location is "$CFG-&gt;dirroot/course/format/masonry" Debug: 
+Error code: detectedmisplacedplugin
+* line 450 of /lib/upgradelib.php: plugin_misplaced_exception thrown
+* line 1615 of /lib/upgradelib.php: call to upgrade_plugins()
+* line 434 of /admin/index.php: call to upgrade_noncore()
+
+[22-Jan-2015 11:41:55 UTC] Default exception handler: Cannot downgrade theme_aardvark from 2014051300 to 2014010700. Debug: 
+Error code: cannotdowngrade
+* line 561 of /lib/upgradelib.php: downgrade_exception thrown
+* line 1615 of /lib/upgradelib.php: call to upgrade_plugins()
+* line 434 of /admin/index.php: call to upgrade_noncore()
+
+[22-Jan-2015 11:42:31 UTC] Default exception handler: Cannot downgrade theme_aardvark from 2014051300 to 2014010700. Debug: 
+Error code: cannotdowngrade
+* line 561 of /lib/upgradelib.php: downgrade_exception thrown
+* line 1615 of /lib/upgradelib.php: call to upgrade_plugins()
+* line 434 of /admin/index.php: call to upgrade_noncore()
+
+[22-Jan-2015 11:46:52 UTC] Default exception handler: Cannot downgrade theme_aardvark from 2014051300 to 2014010700. Debug: 
+Error code: cannotdowngrade
+* line 561 of /lib/upgradelib.php: downgrade_exception thrown
+* line 1615 of /lib/upgradelib.php: call to upgrade_plugins()
+* line 434 of /admin/index.php: call to upgrade_noncore()
+
+[22-Jan-2015 11:49:14 UTC] Default exception handler: Cannot downgrade theme_aardvark from 2014051300 to 2014010700. Debug: 
+Error code: cannotdowngrade
+* line 561 of /lib/upgradelib.php: downgrade_exception thrown
+* line 1615 of /lib/upgradelib.php: call to upgrade_plugins()
+* line 434 of /admin/index.php: call to upgrade_noncore()
+
+[22-Jan-2015 11:55:40 UTC] Default exception handler: Cannot downgrade theme_aardvark from 2014051300 to 2014010700. Debug: 
+Error code: cannotdowngrade
+* line 561 of /lib/upgradelib.php: downgrade_exception thrown
+* line 1615 of /lib/upgradelib.php: call to upgrade_plugins()
+* line 434 of /admin/index.php: call to upgrade_noncore()
+
+[22-Jan-2015 15:46:32 UTC] Cannot terminate session properly - headers were already sent in file: /home/charlesacc1/public_html/mod/copysafepdf/settings.php on line 63
+[08-Mar-2015 23:54:50 UTC] Default exception handler: Plugin "qtype_geogebra" is installed in incorrect location "$CFG-&gt;dirroot/mod/geogebra", expected location is "$CFG-&gt;dirroot/question/type/geogebra" Debug: 
+Error code: detectedmisplacedplugin
+* line 608 of /lib/upgradelib.php: plugin_misplaced_exception thrown
+* line 420 of /lib/upgradelib.php: call to upgrade_plugins_modules()
+* line 1615 of /lib/upgradelib.php: call to upgrade_plugins()
+* line 434 of /admin/index.php: call to upgrade_noncore()
+
+[02-Apr-2015 10:37:56 UTC] Default exception handler: Plugin "report_overviewstats" is installed in incorrect location "$CFG-&gt;dirroot/mod/overviewstats", expected location is "$CFG-&gt;dirroot/report/overviewstats" Debug: 
+Error code: detectedmisplacedplugin
+* line 608 of /lib/upgradelib.php: plugin_misplaced_exception thrown
+* line 420 of /lib/upgradelib.php: call to upgrade_plugins_modules()
+* line 1615 of /lib/upgradelib.php: call to upgrade_plugins()
+* line 434 of /admin/index.php: call to upgrade_noncore()
+
+[02-Apr-2015 11:07:33 UTC] Default exception handler: Plugin "report_overviewstats" is installed in incorrect location "$CFG-&gt;dirroot/mod/overviewstats", expected location is "$CFG-&gt;dirroot/report/overviewstats" Debug: 
+Error code: detectedmisplacedplugin
+* line 608 of /lib/upgradelib.php: plugin_misplaced_exception thrown
+* line 420 of /lib/upgradelib.php: call to upgrade_plugins_modules()
+* line 1615 of /lib/upgradelib.php: call to upgrade_plugins()
+* line 434 of /admin/index.php: call to upgrade_noncore()
+
