@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/groupdocs_annotation/db" VERSION="20120122" COMMENT="XMLDB file for Moodle blocks/groupdocs_annotation_dotnet"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_gdocs_annotation_net" COMMENT="GroupDocs Annotation .NET block">
+      <FIELDS>
+		 <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="userid"/>
+		  <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" PREVIOUS="id" NEXT="url"/>
+		  <FIELD NAME="url" TYPE="char" SIZE="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="userid" NEXT="path"/>
+		  <FIELD NAME="path" TYPE="char" SIZE="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="url" NEXT="title"/>
+		  <FIELD NAME="title" TYPE="char" SIZE="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="path" NEXT="width"/>
+		  <FIELD NAME="width" TYPE="char" SIZE="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="title" NEXT="height"/>
+		  <FIELD NAME="height" TYPE="char" SIZE="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="width" NEXT="handler"/>
+                  <FIELD NAME="handler" TYPE="char" SIZE="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="height"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
