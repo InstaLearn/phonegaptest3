@@ -1,0 +1,2 @@
+[24-Feb-2015 16:07:24 UTC] PHP Warning:  Unterminated comment starting line 3005 in /home/charlesacc1/public_html/lib/navigationlib.php on line 3005
+[24-Feb-2015 16:07:24 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/charlesacc1/public_html/lib/navigationlib.php on line 3006
