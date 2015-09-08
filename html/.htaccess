@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www.ilearn.instalearn.co.in [NC]
+RewriteRule ^(.*)$ http://ilearn.instalearn.co.in/$1 [L,R=301]

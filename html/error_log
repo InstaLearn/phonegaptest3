@@ -1,0 +1,23 @@
+[08-Oct-2014 07:55:33 UTC] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'admin'@'localhost' (using password: YES) in /home/charlesacc1/public_html/lib/dml/mysqli_native_moodle_database.php on line 376
+[08-Oct-2014 07:55:33 UTC] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'admin'@'localhost' (using password: YES) in /home/charlesacc1/public_html/lib/dml/mysqli_native_moodle_database.php on line 77
+[08-Oct-2014 08:01:19 UTC] PHP Notice:  Use of undefined constant MDL_PERF_TEST - assumed 'MDL_PERF_TEST' in /home/charlesacc1/public_html/lib/setuplib.php on line 1813
+[08-Oct-2014 08:01:19 UTC] PHP Notice:  Trying to get property of non-object in /home/charlesacc1/public_html/lib/moodlelib.php on line 8892
+[08-Oct-2014 08:01:19 UTC] PHP Notice:  Undefined offset: 1 in /home/charlesacc1/public_html/lib/moodlelib.php on line 8155
+[08-Oct-2014 08:01:19 UTC] PHP Notice:  Trying to get property of non-object in /home/charlesacc1/public_html/lib/moodlelib.php on line 8899
+[24-Feb-2015 14:16:43 UTC] PHP Warning:  Unterminated comment starting line 98 in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[24-Feb-2015 14:16:43 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[24-Feb-2015 14:16:49 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/charlesacc1/public_html/lib/navigationlib.php on line 2032
+[28-Feb-2015 17:44:30 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/charlesacc1/public_html/lib/navigationlib.php on line 3130
+[28-Feb-2015 17:44:35 UTC] PHP Warning:  Unterminated comment starting line 4832 in /home/charlesacc1/public_html/lib/navigationlib.php on line 4832
+[28-Feb-2015 17:44:35 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/charlesacc1/public_html/lib/navigationlib.php on line 4835
+[28-Feb-2015 18:14:04 UTC] PHP Warning:  Unterminated comment starting line 98 in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[28-Feb-2015 18:14:04 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[28-Feb-2015 18:14:04 UTC] PHP Warning:  Unterminated comment starting line 98 in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[28-Feb-2015 18:14:04 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[28-Feb-2015 18:14:04 UTC] PHP Warning:  Unterminated comment starting line 98 in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[28-Feb-2015 18:14:04 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[28-Feb-2015 18:14:04 UTC] PHP Warning:  Unterminated comment starting line 98 in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[28-Feb-2015 18:14:04 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[28-Feb-2015 18:14:04 UTC] PHP Warning:  Unterminated comment starting line 98 in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[28-Feb-2015 18:14:04 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/charlesacc1/public_html/lib/navigationlib.php on line 98
+[28-Feb-2015 18:14:05 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/charlesacc1/public_html/lib/navigationlib.php on line 176
